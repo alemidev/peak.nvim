@@ -283,17 +283,8 @@ end
 
 function PALETTE:set_telescope_colors()
 	--                                                           FG                     BG                      ATTR
-	vim.api.nvim_set_hl(0, "TelescopeBorder",          HIGHLIGHT(self.black.bright,     nil,                    nil));
-	-- TODO
-	-- vim.api.nvim_set_hl(0, "TelescopePromptBorder",    highlight(nil,                   nil,                    nil))
-	-- vim.api.nvim_set_hl(0, "TelescopePromptNormal",    highlight(nil,                   nil,                    nil));
-	-- vim.api.nvim_set_hl(0, "TelescopePromptPrefix",    highlight(nil,                   nil,                    nil));
-	-- vim.api.nvim_set_hl(0, "TelescopeNormal",          highlight(nil,                   nil,                    nil));
-	-- vim.api.nvim_set_hl(0, "TelescopePreviewTitle",    highlight(nil,                   nil,                    nil));
-	-- vim.api.nvim_set_hl(0, "TelescopePromptTitle",     highlight(nil,                   nil,                    nil));
-	-- vim.api.nvim_set_hl(0, "TelescopeResultsTitle",    highlight(nil,                   nil,                    nil));
-	-- vim.api.nvim_set_hl(0, "TelescopeSelection",       highlight(nil,                   nil,                    nil));
-	-- vim.api.nvim_set_hl(0, "TelescopePreviewLine",     highlight(nil,                   nil,                    nil));
+	vim.api.nvim_set_hl(0, "TelescopeBorder",          HIGHLIGHT(self.black.bright,     self.none.normal,       nil));
+	vim.api.nvim_set_hl(0, "TelescopeNormal",          HIGHLIGHT(nil,                   self.none.normal,       nil));
 end
 
 function PALETTE:set_dap_colors()
