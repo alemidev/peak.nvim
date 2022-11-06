@@ -104,73 +104,55 @@ end
 
 function PALETTE:set_treesitter_colors()
 	--                                                           FG                     BG                      ATTR
-	vim.api.nvim_set_hl(0, "TSText",                   HIGHLIGHT(self.white.bright,     nil,                    nil))
-	-- comment
-	vim.api.nvim_set_hl(0, "TSComment",                HIGHLIGHT(self.gray.normal,      nil,                    nil))
-	-- constant
-	vim.api.nvim_set_hl(0, "TSConstant",               HIGHLIGHT(self.purple.bright,    nil,                    {bold=true}))
-	vim.api.nvim_set_hl(0, "TSFloat",                  HIGHLIGHT(self.purple.bright,    nil,                    nil))
-	vim.api.nvim_set_hl(0, "TSNumber",                 HIGHLIGHT(self.purple.bright,    nil,                    nil))
-	vim.api.nvim_set_hl(0, "TSCharacter",              HIGHLIGHT(self.purple.bright,    nil,                    nil))
-	vim.api.nvim_set_hl(0, "TSLiteral",                HIGHLIGHT(self.purple.dark,      nil,                    nil))
-	vim.api.nvim_set_hl(0, "TSConstBuiltin",           HIGHLIGHT(self.purple.normal,    nil,                    {bold=true}))
-	-- string
-	vim.api.nvim_set_hl(0, "TSString",                 HIGHLIGHT(self.purple.normal,    nil,                    nil))
-	vim.api.nvim_set_hl(0, "TSStringRegex",            HIGHLIGHT(self.orange.dark,      nil,                    nil))
-	vim.api.nvim_set_hl(0, "TSStringEscape",           HIGHLIGHT(self.gray.normal,      nil,                    nil))
-	-- boolean
-	vim.api.nvim_set_hl(0, "TSBoolean",                HIGHLIGHT(self.purple.dark,      nil,                    {bold=true}))
-	-- function
-	vim.api.nvim_set_hl(0, "TSFunction",               HIGHLIGHT(self.azure.normal,     nil,                    nil))
-	vim.api.nvim_set_hl(0, "TSFuncBuiltin",            HIGHLIGHT(self.azure.normal,     nil,                    {bold=true}))
-	vim.api.nvim_set_hl(0, "TSMethod",                 HIGHLIGHT(self.azure.dark,       nil,                    nil))
-	-- identifier
-	vim.api.nvim_set_hl(0, "TSParameter",              HIGHLIGHT(self.azure.bright,     nil,                    nil))
-	vim.api.nvim_set_hl(0, "TSParameterReference",     HIGHLIGHT(self.azure.bright,     nil,                    {bold=true}))
-	vim.api.nvim_set_hl(0, "TSAttribute",              HIGHLIGHT(self.blue.normal,      nil,                    {bold=true}))
-	vim.api.nvim_set_hl(0, "TSField",                  HIGHLIGHT(self.blue.bright,      nil,                    nil))
-	vim.api.nvim_set_hl(0, "TSProperty",               HIGHLIGHT(self.blue.bright,      nil,                    {bold=true}))
-	-- statement
-	vim.api.nvim_set_hl(0, "TSConditional",            HIGHLIGHT(self.red.normal,       nil,                    nil))
-	vim.api.nvim_set_hl(0, "TSKeyword",                HIGHLIGHT(self.red.bright,       nil,                    nil))
-	vim.api.nvim_set_hl(0, "TSKeywordFunction",        HIGHLIGHT(self.red.bright,       nil,                    {bold=true}))
-	vim.api.nvim_set_hl(0, "TSKeywordOperator",        HIGHLIGHT(self.red.dark,         nil,                    {bold=true}))
-	vim.api.nvim_set_hl(0, "TSOperator",               HIGHLIGHT(self.red.dark,         nil,                    nil))
-	-- preproc
-	vim.api.nvim_set_hl(0, "TSAnnotation",             HIGHLIGHT(self.pink.normal,      nil,                    {bold=true}))
-	vim.api.nvim_set_hl(0, "TSConstMacro",             HIGHLIGHT(self.pink.dark,        nil,                    {bold=true}))
-	vim.api.nvim_set_hl(0, "TSFuncMacro",              HIGHLIGHT(self.pink.normal,      nil,                    nil))
-	-- include
-	vim.api.nvim_set_hl(0, "TSInclude",                HIGHLIGHT(self.cyan.dark,        nil,                    {bold=true}))
-	vim.api.nvim_set_hl(0, "TSNamespace",              HIGHLIGHT(self.cyan.dark,        nil,                    nil))
-	vim.api.nvim_set_hl(0, "TSCurrentScope",           HIGHLIGHT(self.cyan.normal,      nil,                    nil))
-	-- type
-	vim.api.nvim_set_hl(0, "TSType",                   HIGHLIGHT(self.orange.normal,    nil,                    nil))
-	vim.api.nvim_set_hl(0, "TSTypeBuiltin",            HIGHLIGHT(self.orange.dark,      nil,                    {bold=true}))
-	vim.api.nvim_set_hl(0, "TSConstructor",            HIGHLIGHT(self.orange.normal,    nil,                    {bold=true}))
-	-- special
-	vim.api.nvim_set_hl(0, "TSLabel",                  HIGHLIGHT(self.yellow.bright,    nil,                    nil))
-	vim.api.nvim_set_hl(0, "TSTag",                    HIGHLIGHT(self.yellow.normal,    nil,                    nil))
-	vim.api.nvim_set_hl(0, "TSTagDelimiter",           HIGHLIGHT(self.yellow.dark,      nil,                    nil))
-	vim.api.nvim_set_hl(0, "TSVariableBuiltin",        HIGHLIGHT(self.yellow.bright,    nil,                    {bold=true}))
-	vim.api.nvim_set_hl(0, "TSURI",                    HIGHLIGHT(self.blue.normal,      nil,                    {underline=true}))
-	-- delimiter
-	vim.api.nvim_set_hl(0, "TSPunctDelimiter",         HIGHLIGHT(self.gray.bright,      nil,                    nil))
-	vim.api.nvim_set_hl(0, "TSPunctBracket",           HIGHLIGHT(self.gray.bright,      nil,                    nil))
-	vim.api.nvim_set_hl(0, "TSPunctSpecial",           HIGHLIGHT(self.gray.bright,      nil,                    nil))
-	-- ???
-	vim.api.nvim_set_hl(0, "TSSymbol",                 HIGHLIGHT(self.gray.bright,      nil,                    nil))
-	vim.api.nvim_set_hl(0, "TSVariable",               HIGHLIGHT(self.white.normal,     nil,                    nil))
-	-- TODO
-	-- vim.api.nvim_set_hl(0, "TSError",                  highlight(nil,                   self.red.dark,          {underline=true}))
-	-- vim.api.nvim_set_hl(0, "TSException",              highlight(nil,                   self.red.normal,        {underline=true, bold=true}))
-	-- vim.api.nvim_set_hl(0, "TSRepeat",                 highlight(self.black.bright,     nil,                    nil))
-	-- vim.api.nvim_set_hl(0, "TSTitle",                  highlight(self.white.bright,     nil,                    {bold=true}))
-	-- vim.api.nvim_set_hl(0, "TSStrong",                 highlight(nil,                   nil,                    {bold=true}))
-	-- vim.api.nvim_set_hl(0, "TSEmphasis",               highlight(self.red.bright,       nil,                    {bold=true}))
-	-- vim.api.nvim_set_hl(0, "TSUnderline",              highlight(nil,                   nil,                    {underline=true}))
-	-- vim.api.nvim_set_hl(0, "TSStrike",                 highlight(nil,                   nil,                    {strikethrough=true}))
-	-- vim.api.nvim_set_hl(0, "TreesitterContext",        highlight(self.black.bright,     nil,                    {bold=true}))
+	vim.api.nvim_set_hl(0, "@text.literal",            HIGHLIGHT(self.white.dark,       nil,                    nil))
+	vim.api.nvim_set_hl(0, "@text.reference",          HIGHLIGHT(self.white.dark,       nil,                    {italic=true}))
+	vim.api.nvim_set_hl(0, "@text.title",              HIGHLIGHT(self.white.normal,     nil,                    {bold=true}))
+	vim.api.nvim_set_hl(0, "@text.uri",                HIGHLIGHT(self.azure.bright,     nil,                    {underline=true}))
+	vim.api.nvim_set_hl(0, "@text.todo",               HIGHLIGHT(self.gray.normal,      nil,                    {italic=true}))
+	vim.api.nvim_set_hl(0, "@comment",                 HIGHLIGHT(self.gray.normal,      nil,                    nil))
+	vim.api.nvim_set_hl(0, "@punctuation",             HIGHLIGHT(self.gray.bright,      nil,                    nil))
+	                                            
+	vim.api.nvim_set_hl(0, "@constant",                HIGHLIGHT(self.purple.normal,    nil,                    nil))
+	vim.api.nvim_set_hl(0, "@constant.builtin",        HIGHLIGHT(self.purple.normal,    nil,                    {bold=true}))
+	vim.api.nvim_set_hl(0, "@constant.macro",          HIGHLIGHT(self.purple.normal,    nil,                    {italic=true}))
+	vim.api.nvim_set_hl(0, "@string",                  HIGHLIGHT(self.purple.dark,      nil,                    nil))
+	vim.api.nvim_set_hl(0, "@string.escape",           HIGHLIGHT(self.purple.dark,      nil,                    {bold=true}))
+	vim.api.nvim_set_hl(0, "@string.special",          HIGHLIGHT(self.orange.dark,      nil,                    nil)) -- ?
+	vim.api.nvim_set_hl(0, "@macro",                   HIGHLIGHT(self.pink.bright,      nil,                    nil))
+	vim.api.nvim_set_hl(0, "@character",               HIGHLIGHT(self.pink.normal,      nil,                    nil))
+	vim.api.nvim_set_hl(0, "@character.special",       HIGHLIGHT(self.pink.normal,      nil,                    nil))
+	vim.api.nvim_set_hl(0, "@number",                  HIGHLIGHT(self.pink.normal,      nil,                    nil))
+	vim.api.nvim_set_hl(0, "@float",                   HIGHLIGHT(self.pink.normal,      nil,                    nil))
+	vim.api.nvim_set_hl(0, "@boolean",                 HIGHLIGHT(self.pink.dark,        nil,                    nil))
+	                                            
+	vim.api.nvim_set_hl(0, "@function",                HIGHLIGHT(self.azure.normal,     nil,                    nil))
+	vim.api.nvim_set_hl(0, "@function.builtin",        HIGHLIGHT(self.azure.dark,       nil,                    {bold=true}))
+	vim.api.nvim_set_hl(0, "@function.macro",          HIGHLIGHT(self.azure.dark,       nil,                    nil))
+	vim.api.nvim_set_hl(0, "@parameter",               HIGHLIGHT(self.gray.normal,      nil,                    nil))
+	vim.api.nvim_set_hl(0, "@method",                  HIGHLIGHT(self.azure.bright,     nil,                    nil))
+	vim.api.nvim_set_hl(0, "@field",                   HIGHLIGHT(self.blue.bright,      nil,                    nil))
+	vim.api.nvim_set_hl(0, "@property",                HIGHLIGHT(self.blue.bright,      nil,                    {bold=true}))
+	vim.api.nvim_set_hl(0, "@constructor",             HIGHLIGHT(self.orange.normal,    nil,                    {bold=true}))
+	                                                               
+	vim.api.nvim_set_hl(0, "@conditional",             HIGHLIGHT(self.red.bright,       nil,                    {bold=true}))
+	vim.api.nvim_set_hl(0, "@repeat",                  HIGHLIGHT(self.red.normal,       nil,                    {bold=true}))
+	vim.api.nvim_set_hl(0, "@label",                   HIGHLIGHT(self.yellow.bright,    nil,                    nil))
+	vim.api.nvim_set_hl(0, "@operator",                HIGHLIGHT(self.red.dark,         nil,                    nil))
+	vim.api.nvim_set_hl(0, "@keyword",                 HIGHLIGHT(self.red.bright,       nil,                    nil))
+	vim.api.nvim_set_hl(0, "@exception",               HIGHLIGHT(self.red.dark,         nil,                    {bold=true}))
+	                                                               
+	vim.api.nvim_set_hl(0, "@variable",                HIGHLIGHT(self.white.bright,     nil,                    nil))
+	vim.api.nvim_set_hl(0, "@type.builtin",            HIGHLIGHT(self.orange.dark,      nil,                    {bold=true}))
+	vim.api.nvim_set_hl(0, "@type.definition",         HIGHLIGHT(self.orange.dark,      nil,                    {italic=true}))
+	vim.api.nvim_set_hl(0, "@type",                    HIGHLIGHT(self.orange.normal,    nil,                    nil))
+	vim.api.nvim_set_hl(0, "@structure",               HIGHLIGHT(self.orange.bright,    nil,                    nil))
+	vim.api.nvim_set_hl(0, "@storageclass",            HIGHLIGHT(self.orange.normal,    nil,                    {bold=true}))
+	vim.api.nvim_set_hl(0, "@namespace",               HIGHLIGHT(self.cyan.dark,        nil,                    nil))
+	vim.api.nvim_set_hl(0, "@include",                 HIGHLIGHT(self.cyan.dark,        nil,                    {bold=true}))
+	vim.api.nvim_set_hl(0, "@preproc",                 HIGHLIGHT(self.pink.dark,        nil,                    nil))
+	vim.api.nvim_set_hl(0, "@define",                  HIGHLIGHT(self.pink.normal,      nil,                    {bold=true}))
+	vim.api.nvim_set_hl(0, "@debug",                   HIGHLIGHT(self.cyan.bright,      nil,                    {italic=true}))
+	-- vim.api.nvim_set_hl(0, "@tag ",                    HIGHLIGHT(self.cyan.bright,      nil,                    nil))
 end
 
 function PALETTE:set_ui_colors()
@@ -186,6 +168,7 @@ function PALETTE:set_ui_colors()
 	vim.api.nvim_set_hl(0, "CursorLineSign",           HIGHLIGHT(nil,                   self.black.normal,      nil)) -- CursorLine color (in sign column)
 	vim.api.nvim_set_hl(0, "CursorLineNr",             HIGHLIGHT(self.yellow.normal,    self.black.normal,      {bold=true})) -- CursorLine color (in number column)
 	vim.api.nvim_set_hl(0, "LineNr",                   HIGHLIGHT(self.black.bright,     nil,                    nil)) -- Number column color
+	vim.api.nvim_set_hl(0, "MsgArea",                  HIGHLIGHT(self.white.dark,       nil,                    nil)) -- Number column color
 
 	vim.api.nvim_set_hl(0, "Pmenu",                    HIGHLIGHT(nil,                   self.black.normal,      nil)) -- Balloon color
 	vim.api.nvim_set_hl(0, "PmenuSel",                 HIGHLIGHT(nil,                   self.gray.dark,         nil)) -- Balloon color
@@ -322,7 +305,7 @@ end
 
 --- set all theme highlight groups
 function PALETTE:set_colors()
-	vim.cmd("highlight! clear")
+	-- vim.cmd("highlight! clear")
 	-- core
 	self:set_syntax_colors()
 	self:set_ui_colors()
