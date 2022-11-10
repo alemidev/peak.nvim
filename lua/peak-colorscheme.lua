@@ -113,7 +113,7 @@ function PALETTE:set_treesitter_colors()
 	vim.api.nvim_set_hl(0, "@punctuation",             HIGHLIGHT(self.gray.bright,      nil,                    nil))
 	vim.api.nvim_set_hl(0, "@punctuation.special",     HIGHLIGHT(self.yellow.dark,      nil,                    nil))
 
-	vim.api.nvim_set_hl(0, "@constant",                HIGHLIGHT(self.purple.normal,    nil,                    nil))
+	vim.api.nvim_set_hl(0, "@constant",                HIGHLIGHT(self.purple.bright,    nil,                    {bold=true}))
 	vim.api.nvim_set_hl(0, "@constant.builtin",        HIGHLIGHT(self.purple.normal,    nil,                    {bold=true}))
 	vim.api.nvim_set_hl(0, "@constant.macro",          HIGHLIGHT(self.purple.normal,    nil,                    {italic=true}))
 	vim.api.nvim_set_hl(0, "@string",                  HIGHLIGHT(self.purple.dark,      nil,                    nil))
