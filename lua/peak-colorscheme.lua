@@ -72,8 +72,8 @@ local PALETTE = {
 	gray   =  COLOR("#444444", "#808080", "#A8A499", nil, 244, nil),
 	white  =  COLOR("#ADA9A1", "#D4D2CF", "#E8E1D3", nil, 252, 15 ),
 	azure  =  COLOR("#5D748C", "#81A1C1", "#A6B4C2", nil, nil, nil),
-	blue   =  COLOR("#323F61", "#48589C", "#5B6EA3", nil, 67,  4  ),
-	purple =  COLOR("#433B6B", "#574C85", "#7468B0", nil, 60,  6  ),
+	blue   =  COLOR("#48589C", "#5B6EA3", "#798DB8", nil, 67,  4  ),
+	purple =  COLOR("#574C85", "#7468B0", "#8F81D4", nil, 60,  6  ),
 	pink   =  COLOR("#63296E", "#84508C", "#AC7EA8", nil, nil, nil),
 	red    =  COLOR("#824E53", "#BF616A", "#D1888E", nil, 1,   9  ),
 	orange =  COLOR("#735F4C", "#AF875F", "#D69C63", nil, 137, nil),
@@ -93,7 +93,7 @@ function PALETTE:set_syntax_colors()
 	vim.api.nvim_set_hl(0, "String",                   HIGHLIGHT(self.purple.normal,    nil,                    nil))
 	vim.api.nvim_set_hl(0, "Boolean",                  HIGHLIGHT(self.purple.dark,      nil,                    {bold=true}))
 	vim.api.nvim_set_hl(0, "Function",                 HIGHLIGHT(self.azure.normal,     nil,                    {bold=true}))
-	vim.api.nvim_set_hl(0, "Identifier",               HIGHLIGHT(self.blue.normal,      nil,                    nil))
+	vim.api.nvim_set_hl(0, "Identifier",               HIGHLIGHT(self.blue.bright,      nil,                    nil))
 	vim.api.nvim_set_hl(0, "Statement",                HIGHLIGHT(self.red.bright,       nil,                    nil))
 	vim.api.nvim_set_hl(0, "PreProc",                  HIGHLIGHT(self.pink.bright,      nil,                    nil))
 	vim.api.nvim_set_hl(0, "Include",                  HIGHLIGHT(self.cyan.normal,      nil,                    nil))
@@ -127,12 +127,12 @@ function PALETTE:set_treesitter_colors()
 	vim.api.nvim_set_hl(0, "@boolean",                 HIGHLIGHT(self.pink.dark,        nil,                    nil))
 
 	vim.api.nvim_set_hl(0, "@function",                HIGHLIGHT(self.azure.normal,     nil,                    nil))
-	vim.api.nvim_set_hl(0, "@function.builtin",        HIGHLIGHT(self.azure.dark,       nil,                    {bold=true}))
 	vim.api.nvim_set_hl(0, "@function.macro",          HIGHLIGHT(self.azure.dark,       nil,                    nil))
+	vim.api.nvim_set_hl(0, "@function.builtin",        HIGHLIGHT(self.azure.dark,       nil,                    {bold=true}))
 	vim.api.nvim_set_hl(0, "@parameter",               HIGHLIGHT(self.gray.normal,      nil,                    nil))
-	vim.api.nvim_set_hl(0, "@method",                  HIGHLIGHT(self.azure.bright,     nil,                    nil))
-	vim.api.nvim_set_hl(0, "@field",                   HIGHLIGHT(self.blue.bright,      nil,                    nil))
-	vim.api.nvim_set_hl(0, "@property",                HIGHLIGHT(self.blue.bright,      nil,                    {bold=true}))
+	vim.api.nvim_set_hl(0, "@method",                  HIGHLIGHT(self.blue.bright,      nil,                    nil))
+	vim.api.nvim_set_hl(0, "@field",                   HIGHLIGHT(self.blue.normal,      nil,                    nil))
+	vim.api.nvim_set_hl(0, "@property",                HIGHLIGHT(self.blue.normal,      nil,                    {bold=true}))
 	vim.api.nvim_set_hl(0, "@constructor",             HIGHLIGHT(self.orange.normal,    nil,                    {bold=true}))
 
 	vim.api.nvim_set_hl(0, "@conditional",             HIGHLIGHT(self.red.bright,       nil,                    {bold=true}))
