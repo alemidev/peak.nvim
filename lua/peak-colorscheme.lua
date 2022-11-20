@@ -239,6 +239,7 @@ function PALETTE:set_gitsigns_colors()
 	--                                                           FG                     BG                      ATTR
 	vim.api.nvim_set_hl(0, "GitSignsChange",           HIGHLIGHT(self.yellow.normal,    nil,                    nil))
 	vim.api.nvim_set_hl(0, "GitSignsDelete",           HIGHLIGHT(self.red.bright,       nil,                    nil))
+	vim.api.nvim_set_hl(0, "GitSignsUntracked",        HIGHLIGHT(self.gray.dark,        nil,                    nil))
 end
 
 function PALETTE:set_cmp_colors()
