@@ -198,8 +198,8 @@ function PALETTE:set_ui_colors()
 	vim.api.nvim_set_hl(0, "DiagnosticHint",           HIGHLIGHT(self.gray.normal,      nil,                    nil));
 	vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn",  HIGHLIGHT(nil,                   nil,                    {underdashed=true, sp=self.orange.normal.gui}));
 	vim.api.nvim_set_hl(0, "DiagnosticUnderlineError", HIGHLIGHT(nil,                   nil,                    {underline=true, sp=self.red.normal.gui}));
-	vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo",  HIGHLIGHT(nil,                   nil,                    {sp=self.cyan.normal.gui}));
-	vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint",  HIGHLIGHT(nil,                   nil,                    {sp=self.gray.normal.gui}));
+	vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo",  HIGHLIGHT(nil,                   nil,                    {underdotted=true, sp=self.cyan.normal.gui}));
+	vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint",  HIGHLIGHT(nil,                   nil,                    {underdotted=true, sp=self.gray.normal.gui}));
 end
 
 function PALETTE:set_diff_colors()
