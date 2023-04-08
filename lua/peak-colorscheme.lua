@@ -86,7 +86,7 @@ local PALETTE = {
 --|| THEME DEFINITIONS
 
 function PALETTE:set_syntax_colors()
-	--                                                           FG                     BG                      ATTR
+	--                                                           FG                     BG                      ATTRla
 	vim.api.nvim_set_hl(0, "Whitespace",               HIGHLIGHT(self.black.normal,     nil,                    nil)) -- set color for whitespace
 	vim.api.nvim_set_hl(0, "Comment",                  HIGHLIGHT(self.gray.normal,      nil,                    nil))
 	vim.api.nvim_set_hl(0, "Constant",                 HIGHLIGHT(self.purple.bright,    nil,                    nil))
@@ -168,7 +168,7 @@ function PALETTE:set_semantic_colors()
 	vim.api.nvim_set_hl(0, "@lsp.type.function",       { link = "@function" })
 	vim.api.nvim_set_hl(0, "@lsp.type.interface",      { link = "@type.qualifier" })
 	-- vim.api.nvim_set_hl(0, "@lsp.type.keyword",        { link = "@keyword" })
-	vim.api.nvim_set_hl(0, "@lsp.type.macro",          HIGHLIGHT(nil,                   nil,                    {italic=true}))
+	vim.api.nvim_set_hl(0, "@lsp.type.macro",          { link = "@function.macro" })
 	vim.api.nvim_set_hl(0, "@lsp.type.method",         { link = "@method" })
 	vim.api.nvim_set_hl(0, "@lsp.type.namespace",      { link = "@namespace" })
 	vim.api.nvim_set_hl(0, "@lsp.type.parameter",      { link = "@parameter" })
