@@ -37,6 +37,7 @@ This colorscheme, apart from theming the builtin syntax, GUI and diffs, applies 
  * [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
  * [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
  * [nvim-dap](https://github.com/mfussenegger/nvim-dap)
+ * [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
  * [tinker.nvim](https://github.com/alemidev/tinker.nvim)'s statusline
 
 ## Color Palette

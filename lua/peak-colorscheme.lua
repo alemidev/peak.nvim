@@ -102,6 +102,7 @@ function PALETTE:set_syntax_colors()
 	vim.api.nvim_set_hl(0, "Type",                     HIGHLIGHT(self.orange.normal,    nil,                    nil))
 	vim.api.nvim_set_hl(0, "Special",                  HIGHLIGHT(self.yellow.bright,    nil,                    {bold=true}))
 	vim.api.nvim_set_hl(0, "Delimiter",                HIGHLIGHT(self.gray.bright,      nil,                    nil))
+	vim.api.nvim_set_hl(0, "Directory",                HIGHLIGHT(self.blue.bright,      nil,                    nil))
 end
 
 function PALETTE:set_treesitter_colors()
@@ -259,6 +260,18 @@ function PALETTE:set_statusline_colors()
 	vim.api.nvim_set_hl(0, "SpecialMode",              HIGHLIGHT(self.black.normal,     self.pink.normal,       {bold=true}))
 end
 
+function PALETTE:set_neotree_colors()
+	vim.api.nvim_set_hl(0, "NeoTreeGitAdded",          HIGHLIGHT(self.green.normal,     nil,                    nil))
+	vim.api.nvim_set_hl(0, "NeoTreeGitDeleted",        HIGHLIGHT(self.red.dark,         nil,                    nil))
+	vim.api.nvim_set_hl(0, "NeoTreeGitModified",       HIGHLIGHT(self.red.bright,       nil,                    nil))
+	vim.api.nvim_set_hl(0, "NeoTreeGitConflict",       HIGHLIGHT(self.purple.bright,    nil,                    nil))
+	vim.api.nvim_set_hl(0, "NeoTreeGitIgnored",        HIGHLIGHT(self.gray.dark,        nil,                    nil))
+	vim.api.nvim_set_hl(0, "NeoTreeGitRenamed",        HIGHLIGHT(self.pink.normal,      nil,                    nil))
+	vim.api.nvim_set_hl(0, "NeoTreeGitStaged",         HIGHLIGHT(self.yellow.normal,    nil,                    nil))
+	vim.api.nvim_set_hl(0, "NeoTreeGitUnstaged",       HIGHLIGHT(self.azure.normal,     nil,                    nil))
+	vim.api.nvim_set_hl(0, "NeoTreeGitUntracked",      HIGHLIGHT(self.orange.normal,    nil,                    nil))
+end
+
 function PALETTE:set_gitsigns_colors()
 	--                                                           FG                     BG                      ATTR
 	vim.api.nvim_set_hl(0, "GitSignsChange",           HIGHLIGHT(self.yellow.normal,    nil,                    nil))
@@ -342,6 +355,7 @@ function PALETTE:set_colors()
 	self:set_tab_colors()
 	self:set_statusline_colors()
 	-- addons
+	self:set_neotree_colors()
 	self:set_treesitter_colors()
 	self:set_gitsigns_colors()
 	self:set_telescope_colors()
