@@ -87,7 +87,7 @@ local PALETTE = {
 
 function PALETTE:set_syntax_colors()
 	--                                                           FG                     BG                      ATTR
-	vim.api.nvim_set_hl(0, "Normal",                   HIGHLIGHT(self.white.dark,       nil,                    nil)) -- set color for whitespace
+	vim.api.nvim_set_hl(0, "Normal",                   HIGHLIGHT(self.white.normal,     nil,                    nil)) -- set color for whitespace
 	vim.api.nvim_set_hl(0, "NormalNC",                 HIGHLIGHT(self.white.dark,       nil,                    nil)) -- set color for whitespace
 	vim.api.nvim_set_hl(0, "Whitespace",               HIGHLIGHT(self.black.normal,     nil,                    nil)) -- set color for whitespace
 	vim.api.nvim_set_hl(0, "Comment",                  HIGHLIGHT(self.gray.normal,      nil,                    nil))
