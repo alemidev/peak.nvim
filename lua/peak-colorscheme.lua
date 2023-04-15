@@ -86,7 +86,9 @@ local PALETTE = {
 --|| THEME DEFINITIONS
 
 function PALETTE:set_syntax_colors()
-	--                                                           FG                     BG                      ATTRla
+	--                                                           FG                     BG                      ATTR
+	vim.api.nvim_set_hl(0, "Normal",                   HIGHLIGHT(self.white.dark,       nil,                    nil)) -- set color for whitespace
+	vim.api.nvim_set_hl(0, "NormalNC",                 HIGHLIGHT(self.white.dark,       nil,                    nil)) -- set color for whitespace
 	vim.api.nvim_set_hl(0, "Whitespace",               HIGHLIGHT(self.black.normal,     nil,                    nil)) -- set color for whitespace
 	vim.api.nvim_set_hl(0, "Comment",                  HIGHLIGHT(self.gray.normal,      nil,                    nil))
 	vim.api.nvim_set_hl(0, "Constant",                 HIGHLIGHT(self.purple.bright,    nil,                    nil))
@@ -104,8 +106,8 @@ end
 
 function PALETTE:set_treesitter_colors()
 	--                                                           FG                     BG                      ATTR
-	vim.api.nvim_set_hl(0, "@text.literal",            HIGHLIGHT(self.white.dark,       nil,                    nil))
-	vim.api.nvim_set_hl(0, "@text.reference",          HIGHLIGHT(self.white.dark,       nil,                    {italic=true}))
+	vim.api.nvim_set_hl(0, "@text.literal",            HIGHLIGHT(self.yellow.bright,    nil,                    nil))
+	vim.api.nvim_set_hl(0, "@text.reference",          HIGHLIGHT(self.white.bright,     nil,                    {italic=true}))
 	vim.api.nvim_set_hl(0, "@text.title",              HIGHLIGHT(self.white.normal,     nil,                    {bold=true}))
 	vim.api.nvim_set_hl(0, "@text.uri",                HIGHLIGHT(self.azure.bright,     nil,                    {underline=true}))
 	vim.api.nvim_set_hl(0, "@text.todo",               HIGHLIGHT(self.gray.normal,      nil,                    {italic=true}))
@@ -143,7 +145,7 @@ function PALETTE:set_treesitter_colors()
 	vim.api.nvim_set_hl(0, "@exception",               HIGHLIGHT(self.red.dark,         nil,                    {bold=true}))
 
 	vim.api.nvim_set_hl(0, "@variable",                HIGHLIGHT(self.white.bright,     nil,                    nil))
-	vim.api.nvim_set_hl(0, "@variable.builtin",        HIGHLIGHT(self.white.dark,       nil,                    {bold=true}))
+	vim.api.nvim_set_hl(0, "@variable.builtin",        HIGHLIGHT(self.yellow.bright,    nil,                    {bold=true}))
 	vim.api.nvim_set_hl(0, "@type.builtin",            HIGHLIGHT(self.orange.dark,      nil,                    {bold=true}))
 	vim.api.nvim_set_hl(0, "@type.definition",         HIGHLIGHT(self.orange.dark,      nil,                    {italic=true}))
 	vim.api.nvim_set_hl(0, "@type.qualifier",          HIGHLIGHT(self.orange.dark,      nil,                    nil))
