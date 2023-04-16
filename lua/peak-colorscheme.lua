@@ -196,7 +196,7 @@ function PALETTE:set_ui_colors()
 	vim.api.nvim_set_hl(0, "CursorLineNr",             HIGHLIGHT(self.yellow.normal,    self.black.normal,      {bold=true})) -- CursorLine color (in number column)
 	vim.api.nvim_set_hl(0, "LineNr",                   HIGHLIGHT(self.black.bright,     nil,                    nil)) -- Number column color
 	vim.api.nvim_set_hl(0, "MsgArea",                  HIGHLIGHT(self.white.dark,       nil,                    nil)) -- Number column color
-	vim.api.nvim_set_hl(0, "Conceal",                  HIGHLIGHT(self.white.dark,       self.black.normal,      nil))
+	vim.api.nvim_set_hl(0, "Conceal",                  HIGHLIGHT(self.white.dark,       self.black.dark,        nil))
 
 	vim.api.nvim_set_hl(0, "Pmenu",                    HIGHLIGHT(nil,                   self.black.normal,      nil)) -- Balloon color
 	vim.api.nvim_set_hl(0, "PmenuSel",                 HIGHLIGHT(nil,                   self.gray.dark,         nil)) -- Balloon color
