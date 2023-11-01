@@ -11,7 +11,7 @@
                      #&@@@@@@#G   .  GG         #G  ##  ^ !            blue and red tones, to           
                 B B&&&&@@&&#  !   ^  ## G  GB&&#GG# B  G~.             keep you cozy at night           
               GGB G@@#&&#G       ~ . B  GBB###&@@B G       ^                                            
-            GGG      B&#B G .:!  !  @B  B#GB###GB !          ^      * by alemidev <me@alemi.dev>        
+            GGG      B&#B G .:!  !  @B  B#GB###GB !          ^      * by alemi <me@alemi.dev>           
           GG !    GB@&BB      :  !.G#GG B#&&#G  G      G . .^.:                                         
          GB  . GG#@@@&##     :  !. # G B&@@#B      : GBG    . .:                               !^G      
     B######   ^^&@@@&BG  G     .     B##BGBB   B     #B   &&  .  !G                        .:B GB##B    
