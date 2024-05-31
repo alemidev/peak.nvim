@@ -207,9 +207,9 @@ function PALETTE:set_ui_colors()
 	vim.api.nvim_set_hl(0, "PmenuSel",                 HIGHLIGHT(nil,                   self.gray.dark,         nil)) -- Balloon color
 	-- vim.api.nvim_set_hl(0, "PmenuSbar",                HIGHLIGHT(nil,                   self.black.normal,      nil)) -- Balloon color
 	-- vim.api.nvim_set_hl(0, "PmenuThumb",               HIGHLIGHT(nil,                   self.black.normal,      nil)) -- Balloon color
-	vim.api.nvim_set_hl(0, "NormalFloat",              HIGHLIGHT(nil,                   self.black.normal,      nil)) -- Used mostly for replace popup
+	vim.api.nvim_set_hl(0, "NormalFloat",              HIGHLIGHT(self.white.dark,       self.black.normal,      nil)) -- Used mostly for replace popup
 	vim.api.nvim_set_hl(0, "FloatBorder",              HIGHLIGHT(self.black.bright,     nil,                    nil)) -- Used mostly for replace popup
-	vim.api.nvim_set_hl(0, "FloatTitle",               HIGHLIGHT(self.white.dark,       self.gray.dark,         nil)) -- custom definition of dessing.nvim
+	vim.api.nvim_set_hl(0, "FloatTitle",               HIGHLIGHT(self.white.dark,       self.gray.bright,       nil)) -- custom definition of dessing.nvim
 
 	-- must configure rust-tools to use this as group
 	vim.api.nvim_set_hl(0, "InlayHint",                HIGHLIGHT(self.black.bright,     nil,                    nil))
@@ -270,6 +270,8 @@ function PALETTE:set_statusline_colors()
 end
 
 function PALETTE:set_neotree_colors()
+	vim.api.nvim_set_hl(0, 'NeoTreeTitleBar',          HIGHLIGHT(self.white.bright,     nil,                    {bold=true}))
+	vim.api.nvim_set_hl(0, 'NeoTreeFloatTitle',        HIGHLIGHT(self.white.bright,     self.black.bright,      {bold=true}))
 	vim.api.nvim_set_hl(0, "NeoTreeGitAdded",          HIGHLIGHT(self.green.normal,     nil,                    nil))
 	vim.api.nvim_set_hl(0, "NeoTreeGitDeleted",        HIGHLIGHT(self.red.dark,         nil,                    nil))
 	vim.api.nvim_set_hl(0, "NeoTreeGitModified",       HIGHLIGHT(self.red.bright,       nil,                    nil))
