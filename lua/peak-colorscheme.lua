@@ -181,7 +181,7 @@ function PALETTE:set_semantic_colors()
 	vim.api.nvim_set_hl(0, "@lsp.type.struct",         { link = "@type" })
 	vim.api.nvim_set_hl(0, "@lsp.type.type",           { link = "@define" })
 	vim.api.nvim_set_hl(0, "@lsp.type.typeParameter",  { link = "@type.definition" })
-	vim.api.nvim_set_hl(0, "@lsp.type.variable",       {})
+	vim.api.nvim_set_hl(0, "@lsp.type.variable",       { link = "@variable" })
 end
 
 function PALETTE:set_ui_colors()
