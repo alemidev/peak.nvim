@@ -186,9 +186,11 @@ end
 
 function PALETTE:set_ui_colors()
 	--                                                           FG                     BG                      ATTR
-	vim.api.nvim_set_hl(0, "NonText",                  HIGHLIGHT(self.black.bright,     nil,                    nil))
+	vim.api.nvim_set_hl(0, "NonText",                  HIGHLIGHT(self.black.normal,     nil,                    nil))
 	vim.api.nvim_set_hl(0, "Visual",                   HIGHLIGHT(nil,                   self.black.bright,      nil))
-	vim.api.nvim_set_hl(0, "Search",                   HIGHLIGHT(self.yellow.bright,    self.gray.dark,         {bold=true}))
+	vim.api.nvim_set_hl(0, "Search",                   HIGHLIGHT(self.yellow.bright,    self.gray.dark,         nil))
+	vim.api.nvim_set_hl(0, "CurSearch",                HIGHLIGHT(self.yellow.bright,    self.gray.dark,         {bold=true}))
+	vim.api.nvim_set_hl(0, "IncSearch",                { link = "CurSearch" })
 	vim.api.nvim_set_hl(0, "Folded",                   HIGHLIGHT(self.cyan.normal,      self.black.normal,      nil))
 	vim.api.nvim_set_hl(0, "FoldColumn",               HIGHLIGHT(self.cyan.normal,      nil,                    nil))
 	vim.api.nvim_set_hl(0, "VertSplit",                HIGHLIGHT(self.black.normal,     self.black.normal,      nil)) -- Split divider color
@@ -205,11 +207,13 @@ function PALETTE:set_ui_colors()
 	vim.api.nvim_set_hl(0, "PmenuSel",                 HIGHLIGHT(nil,                   self.gray.dark,         nil)) -- Balloon color
 	-- vim.api.nvim_set_hl(0, "PmenuSbar",                HIGHLIGHT(nil,                   self.black.normal,      nil)) -- Balloon color
 	-- vim.api.nvim_set_hl(0, "PmenuThumb",               HIGHLIGHT(nil,                   self.black.normal,      nil)) -- Balloon color
+	vim.api.nvim_set_hl(0, "NormalFloat",              HIGHLIGHT(nil,                   self.black.normal,      nil)) -- Used mostly for replace popup
 	vim.api.nvim_set_hl(0, "FloatBorder",              HIGHLIGHT(self.black.bright,     nil,                    nil)) -- Used mostly for replace popup
 	vim.api.nvim_set_hl(0, "FloatTitle",               HIGHLIGHT(self.white.dark,       self.gray.dark,         nil)) -- custom definition of dessing.nvim
 
 	-- must configure rust-tools to use this as group
 	vim.api.nvim_set_hl(0, "InlayHint",                HIGHLIGHT(self.black.bright,     nil,                    nil))
+	vim.api.nvim_set_hl(0, "LspInlayHint",             HIGHLIGHT(self.black.bright,     nil,                    nil))
 
 	vim.api.nvim_set_hl(0, "Question",                 HIGHLIGHT(self.cyan.normal,      nil,                    {bold=true}))
 	vim.api.nvim_set_hl(0, "MoreMsg",                  HIGHLIGHT(self.black.bright,     nil,                    {bold=true}))
@@ -233,10 +237,11 @@ end
 
 function PALETTE:set_diff_colors()
 	--                                                           FG                     BG                      ATTR
-	vim.api.nvim_set_hl(0, "DiffAdd",                  HIGHLIGHT(nil,                   self.black.normal,      nil))
-	vim.api.nvim_set_hl(0, "DiffChange",               HIGHLIGHT(nil,                   self.black.dark,        nil))
-	vim.api.nvim_set_hl(0, "DiffDelete",               HIGHLIGHT(self.black.normal,     self.black.dark,        nil))
-	vim.api.nvim_set_hl(0, "DiffText",                 HIGHLIGHT(nil,                   self.black.normal,      nil))
+	vim.api.nvim_set_hl(0, "diffAdded",                HIGHLIGHT(self.green.normal,     self.black.dark,        nil))
+	vim.api.nvim_set_hl(0, "diffChanged",              HIGHLIGHT(self.purple.normal,    self.black.dark,        nil))
+	vim.api.nvim_set_hl(0, "diffRemoved",              HIGHLIGHT(self.red.normal,       self.black.dark,        nil))
+	vim.api.nvim_set_hl(0, "diffLine",                 HIGHLIGHT(self.pink.normal,      self.black.bright,      {bold=true}))
+	vim.api.nvim_set_hl(0, "diffSubname",              HIGHLIGHT(self.yellow.dark,      self.black.bright,      nil))
 end
 
 function PALETTE:set_spell_colors()
