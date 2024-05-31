@@ -186,12 +186,13 @@ end
 
 function PALETTE:set_ui_colors()
 	--                                                           FG                     BG                      ATTR
-	vim.api.nvim_set_hl(0, "NonText",                  HIGHLIGHT(self.black.normal,     nil,                    nil))
+	vim.api.nvim_set_hl(0, "NonText",                  HIGHLIGHT(self.black.bright,     nil,                    nil))
 	vim.api.nvim_set_hl(0, "Visual",                   HIGHLIGHT(nil,                   self.black.bright,      nil))
 	vim.api.nvim_set_hl(0, "Search",                   HIGHLIGHT(self.yellow.bright,    self.gray.dark,         {bold=true}))
 	vim.api.nvim_set_hl(0, "Folded",                   HIGHLIGHT(self.cyan.normal,      self.black.normal,      nil))
 	vim.api.nvim_set_hl(0, "FoldColumn",               HIGHLIGHT(self.cyan.normal,      nil,                    nil))
 	vim.api.nvim_set_hl(0, "VertSplit",                HIGHLIGHT(self.black.normal,     self.black.normal,      nil)) -- Split divider color
+	vim.api.nvim_set_hl(0, "WinSeparator",             HIGHLIGHT(self.black.bright,     nil,                    nil)) -- Split divider color
 	vim.api.nvim_set_hl(0, "SignColumn",               HIGHLIGHT(nil,                   nil,                    nil)) -- Gutter color
 	vim.api.nvim_set_hl(0, "CursorLine",               HIGHLIGHT(nil,                   nil,                    nil)) -- Line number color
 	vim.api.nvim_set_hl(0, "CursorLineSign",           HIGHLIGHT(nil,                   self.black.normal,      nil)) -- CursorLine color (in sign column)
