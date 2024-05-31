@@ -212,8 +212,8 @@ function PALETTE:set_ui_colors()
 	vim.api.nvim_set_hl(0, "FloatTitle",               HIGHLIGHT(self.white.dark,       self.gray.bright,       nil)) -- custom definition of dessing.nvim
 
 	-- must configure rust-tools to use this as group
-	vim.api.nvim_set_hl(0, "InlayHint",                HIGHLIGHT(self.black.bright,     nil,                    nil))
-	vim.api.nvim_set_hl(0, "LspInlayHint",             HIGHLIGHT(self.black.bright,     nil,                    nil))
+	vim.api.nvim_set_hl(0, "InlayHint",                HIGHLIGHT(self.gray.dark,     nil,                    nil))
+	vim.api.nvim_set_hl(0, "LspInlayHint",             HIGHLIGHT(self.gray.dark,     nil,                    nil))
 
 	vim.api.nvim_set_hl(0, "Question",                 HIGHLIGHT(self.cyan.normal,      nil,                    {bold=true}))
 	vim.api.nvim_set_hl(0, "MoreMsg",                  HIGHLIGHT(self.black.bright,     nil,                    {bold=true}))
