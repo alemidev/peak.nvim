@@ -68,8 +68,8 @@ end
 -- @field set_colors function to easily apply color scheme
 local PALETTE = {
 	--||             DARK       NORMAL     BRIGHT    ( x11 codes ) -- TODO map dark variants
-	black  =  COLOR("#19161A", "#252A2B", "#333333", nil, 235, 238),
-	gray   =  COLOR("#444444", "#808080", "#A8A499", nil, 244, nil),
+	black  =  COLOR("#16161c", "#201f29", "#302E3A", nil, 235, 238),
+	gray   =  COLOR("#494756", "#848291", "#A8A7AF", nil, 244, nil),
 	white  =  COLOR("#ADA9A1", "#D4D2CF", "#E8E1D3", nil, 252, 15 ),
 	azure  =  COLOR("#5D748C", "#81A1C1", "#A6B4C2", nil, nil, nil),
 	blue   =  COLOR("#48589C", "#5B6EA3", "#798DB8", nil, 67,  4  ),
