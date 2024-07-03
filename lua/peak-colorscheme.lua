@@ -288,6 +288,9 @@ function PALETTE:set_gitsigns_colors()
 	vim.api.nvim_set_hl(0, "GitSignsChange",           HIGHLIGHT(self.yellow.normal,    nil,                    nil))
 	vim.api.nvim_set_hl(0, "GitSignsDelete",           HIGHLIGHT(self.red.bright,       nil,                    nil))
 	vim.api.nvim_set_hl(0, "GitSignsUntracked",        HIGHLIGHT(self.gray.dark,        nil,                    nil))
+	vim.api.nvim_set_hl(0, "GitSignsAdd", { link = "GitSignsChange" })
+	vim.api.nvim_set_hl(0, "GitSignsTopdelete", { link = "GitSignsDelete" })
+	vim.api.nvim_set_hl(0, "GitSignsChangedelete", { link = "GitSignsDelete" })
 end
 
 function PALETTE:set_cmp_colors()
