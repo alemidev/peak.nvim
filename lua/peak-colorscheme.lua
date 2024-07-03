@@ -286,11 +286,17 @@ end
 function PALETTE:set_gitsigns_colors()
 	--                                                           FG                     BG                      ATTR
 	vim.api.nvim_set_hl(0, "GitSignsChange",           HIGHLIGHT(self.yellow.normal,    nil,                    nil))
+	vim.api.nvim_set_hl(0, "GitSignsChangeLn",         { link = "GitSignsChange" })
+	vim.api.nvim_set_hl(0, "GitSignsAdd",              { link = "GitSignsChange" })
+	vim.api.nvim_set_hl(0, "GitSignsAddLn",            { link = "GitSignsChange" })
 	vim.api.nvim_set_hl(0, "GitSignsDelete",           HIGHLIGHT(self.red.bright,       nil,                    nil))
+	vim.api.nvim_set_hl(0, "GitSignsDeleteLn",         { link = "GitSignsDelete" })
+	vim.api.nvim_set_hl(0, "GitSignsTopdelete",        { link = "GitSignsDelete" })
+	vim.api.nvim_set_hl(0, "GitSignsTopdeleteLn",      { link = "GitSignsDelete" })
+	vim.api.nvim_set_hl(0, "GitSignsChangedelete",     { link = "GitSignsDelete" })
+	vim.api.nvim_set_hl(0, "GitSignsChangedeleteLn",   { link = "GitSignsDelete" })
 	vim.api.nvim_set_hl(0, "GitSignsUntracked",        HIGHLIGHT(self.gray.dark,        nil,                    nil))
-	vim.api.nvim_set_hl(0, "GitSignsAdd", { link = "GitSignsChange" })
-	vim.api.nvim_set_hl(0, "GitSignsTopdelete", { link = "GitSignsDelete" })
-	vim.api.nvim_set_hl(0, "GitSignsChangedelete", { link = "GitSignsDelete" })
+	vim.api.nvim_set_hl(0, "GitSignsUntracked",        { link = "GitSignsUntracked" })
 end
 
 function PALETTE:set_cmp_colors()
