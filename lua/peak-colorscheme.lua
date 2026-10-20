@@ -163,7 +163,7 @@ end
 
 function PALETTE:set_semantic_colors()
 	-- omg go...
-	vim.api.nvim_set_hl(0, "@lsp.mod.defaultLibrary.go",    { link = "@boolean" })
+	vim.api.nvim_set_hl(0, "@lsp.mod.readonly.go",    { link = "@constant.builtin" })
 
 	--                                                           FG                     BG                      ATTR
 	vim.api.nvim_set_hl(0, "@lsp.type.class",          { link = "@storageclass" })
