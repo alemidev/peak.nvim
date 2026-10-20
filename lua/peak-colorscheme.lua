@@ -162,6 +162,9 @@ function PALETTE:set_treesitter_colors()
 end
 
 function PALETTE:set_semantic_colors()
+	-- omg go...
+	vim.api.nvim_set_hl(0, "@lsp.type.variable.go",    { link = "@boolean" })
+
 	--                                                           FG                     BG                      ATTR
 	vim.api.nvim_set_hl(0, "@lsp.type.class",          { link = "@storageclass" })
 	vim.api.nvim_set_hl(0, "@lsp.type.comment",        { link = "@comment" })
