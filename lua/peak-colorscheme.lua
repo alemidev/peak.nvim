@@ -163,7 +163,9 @@ end
 
 function PALETTE:set_semantic_colors()
 	-- omg go...
-	vim.api.nvim_set_hl(0, "@lsp.typemod.type.defaultLibrary.go",    { link = "@constant.builtin" })
+	vim.api.nvim_set_hl(0, "@lsp.typemod.type.defaultLibrary.go",    { link = "@type.builtin" })
+	vim.api.nvim_set_hl(0, "@lsp.typemod.variable.defaultLibrary.go",    { link = "@constant.builtin" })
+	vim.api.nvim_set_hl(0, "@lsp.mod.readonly.go",    { link = "@constant" })
 
 	--                                                           FG                     BG                      ATTR
 	vim.api.nvim_set_hl(0, "@lsp.type.class",          { link = "@storageclass" })
